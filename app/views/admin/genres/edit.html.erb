@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row py-4">
+    <h1>ジャンル編集</h1>
+  </div>
+  <%= form_with model: @genre, url: admin_genre_path(@genre.id),method: :patch, class: "row" do |f| %>
+    <div class="form-group row col-9">
+      <%= f.label :ジャンル名, class: "col-form-label col-sm-2" %>
+      <%= f.text_field :name, class: "col-sm-3" %>
+      <%= f.submit "変更を保存", class: "btn btn-success offset-1 col-sm-3" %>
+    </div>
+  <% end %>
+</div>
