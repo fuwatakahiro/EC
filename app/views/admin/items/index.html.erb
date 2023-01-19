@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="h2">商品一覧</div>
+  </div>
+  <div class="mt-5">
+    <div class="row">
+      <div class="col-1 ">id</div>
+      <div class="col-4">商品名</div>
+      <div class="col-2">値段</div>
+      <div class="col-2">ジャンル</div>
+      <div class="col-3">ステータス</div>
+    </div>
+    <div class="row">
+      <% @items.each do |item| %>
+        <div class="col-1"><%= item.id %></div>
+        <div class="col-4"><%= link_to item.name, admin_item_path(item.id), class: "" %></div>
+        <div class="col-2"><%= item.price %></div>
+        <div class="col-2"><%= item.genre.name %></div>
+        <div class="col-3"><%= item.sale_status %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row my-5">
+    <h2>商品詳細</h2>
+  </div>
+  <div class="row mt-5">
+    <div class="col-5">
+      <%= image_tag @item.get_item_image(450,450) %>
+    </div>
+    <div class="col-6 offset-1">
+      <div class="row my-4">
+        <div class="col-4">商品名</div>
+        <div class="col-8"><%= @item.name %></div>
+      </div>
+      <div class="row my-4">
+        <div class="col-4">商品説明</div>
+        <div class="col-8"><%= @item.explation %></div>
+      </div>
+      <div class="row my-4">
+        <div class="col-4">税抜き値段<br>(税抜き価格)</div>
+        <div class="col-8"><%= @item.price %>(<%=  (@item.price*1.1).floor %>)円</div>
+      </div>
+      <div class="row my-4">
+        <div class="col-4">ジャンル</div>
+        <div class="col-8"><%= @item.genre.name %></div>
+      </div>
+      <div class="row my-4">
+        <div class="col-4">販売ステータス</div>
+        <div class="col-8 text-success"><%= @item.sale_status %></div>
+      </div>
+      <div class="ml-5"><%= link_to "編集をする", edit_admin_item_path(@item.id), class: "btn btn-success" %></div>
+    </div>
+  </div>
+</div>
